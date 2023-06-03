@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { fetchCountry } from 'service/country-service';
 
-export const Country = () => {
-  const location = useLocation()
+const Country = () => {
+  const location = useLocation();
   const { countryId } = useParams();
   const [country, setCountry] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsloading] = useState(false);
 
-  console.log(location)
+  console.log(location);
 
   useEffect(() => {
     const fetchCountryData = async () => {
@@ -26,18 +26,19 @@ export const Country = () => {
       }
     };
     fetchCountryData();
-  }, [countryId])
+  }, [countryId]);
 
   return (
     <Section>
+      <Link to={location?.state ?? '/'}>back</Link>
+
       <Container>
-        <Link to={location?.state ?? '/'}>back</Link>
-        {error && (
-          <h1>Sorry, something went wrong. Server says {error}</h1>
-        )}
+        {error && <h1>Sorry, something went wrong. Server says {error}</h1>}
         <CountryInfo country={country} />
         {isLoading && <Loader />}
       </Container>
     </Section>
   );
 };
+
+export default Country;

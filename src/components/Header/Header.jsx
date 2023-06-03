@@ -10,6 +10,7 @@ import {
   NavBar,
   NavLinkStyled,
 } from './Header.styled';
+import { Suspense } from 'react';
 
 export const Header = () => {
   const theme = useTheme();
@@ -28,7 +29,9 @@ export const Header = () => {
           </HeaderWrapper>
         </Container>
       </NavBar>
-      <Outlet />
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

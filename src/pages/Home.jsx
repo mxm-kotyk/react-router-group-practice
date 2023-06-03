@@ -2,7 +2,7 @@ import { Container, CountryList, Heading, Loader, Section } from 'components';
 import { useEffect, useState } from 'react';
 import { getCountries } from '../service/country-service';
 
-export const Home = () => {
+const Home = () => {
   const [countries, setCoutries] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -35,3 +35,4 @@ export const Home = () => {
     </Section>
   );
 };
+export default Home;

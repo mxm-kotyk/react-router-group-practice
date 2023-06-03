@@ -1,6 +1,10 @@
 import { Header } from 'components';
-import { CountrySearch, Home, Country } from 'pages';
+import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
+
+const CountrySearch = lazy(() => import('../../pages/CountrySearch'));
+const Home = lazy(() => import('../../pages/Home'));
+const Country = lazy(() => import('../../pages/Country'));
 
 export const App = () => {
   return (
