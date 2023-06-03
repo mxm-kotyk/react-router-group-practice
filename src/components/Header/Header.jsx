@@ -23,12 +23,11 @@ export const Header = () => {
 
             <LinkWrapper>
               <NavLinkStyled to="/">Home</NavLinkStyled>
-              <NavLinkStyled to="/country">Countries</NavLinkStyled>
+              <NavLinkStyled to="/countrys">Countries</NavLinkStyled>
             </LinkWrapper>
           </HeaderWrapper>
         </Container>
       </NavBar>
-
       <Outlet />
     </>
   );
